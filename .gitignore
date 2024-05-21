@@ -84,6 +84,12 @@ profile_default/
 ipython_config.py
 
 # Environments
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+local_settings
 .env
 .venv
 env/
