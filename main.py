@@ -119,7 +119,7 @@ def send_email_background(email: str):
     part = MIMEText(text, "plain")
     message.attach(part)
 
-    with smtplib.SMTP("smtp.ethereal.email", 587) as server:
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
         server.starttls()
         server.login(sender_email, sender_password)
         server.sendmail(
