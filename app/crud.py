@@ -18,6 +18,9 @@ def create_user(db: Session, user: schemas.CreateUser):
     db.refresh(db_user)
     return db_user
 
+def get_users_all(db: Session, user: schemas.CreateUser):
+    db_user = models.User(username=user.username, password=user.password)
+    return db.query(db_user)
+
 def get_users(db: Session, skip: int = 0, limit: int = 10):
-    print('%$$$$$$$$############33',db.query(models.User).all())
     return db.query(models.User).offset(skip).limit(limit).all()
