@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from sqlalchemy.orm import Session
 from pydantic import EmailStr, BaseModel, Field
-from .. import crud, schemas, databases
+from app import crud, schemas, databases
 from jose import jwt, JWTError
 from passlib.context import CryptContext
 from datetime import datetime, timedelta

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.app.routers import users, auth, reset_password
-from backend.app.databases import Base, engine
+from app.routers import users, auth, reset_password
+from app.databases import Base, engine
 import os
 from dotenv import load_dotenv
 
