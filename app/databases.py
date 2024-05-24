@@ -15,3 +15,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
+def init_db():
+    import app.models  # Certifique-se de que o caminho está correto
+    Base.metadata.create_all(bind=engine)

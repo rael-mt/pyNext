@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import users, auth, reset_password
+from app.routers import users, auth, reset_password, clientes, centrodecusto_depart
 from app.databases import Base, engine
 import os
 from dotenv import load_dotenv
+
+# from backend.app.routers import clientes
 
 # Criação das tabelas no banco de dados
 Base.metadata.create_all(bind=engine)
@@ -26,5 +28,7 @@ app.add_middleware(
 
 # Incluir rotas
 app.include_router(users.router)
+app.include_router(clientes.router)
 app.include_router(auth.router)
 app.include_router(reset_password.router)
+app.include_router(centrodecusto_depart.router)
